@@ -1,5 +1,5 @@
 #include <gpg/cloud_camera.h>
-
+#include <set>
 
 CloudCamera::CloudCamera()
 : cloud_original_(new PointCloudRGB), cloud_processed_(new PointCloudRGB)

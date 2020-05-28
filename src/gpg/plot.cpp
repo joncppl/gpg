@@ -1,5 +1,5 @@
 #include <gpg/plot.h>
-
+#include <thread>
 
 void Plot::plotFingers3D(const std::vector<GraspSet>& hand_set_list, const PointCloudRGBA::Ptr& cloud,
   std::string str, double outer_diameter, double finger_width, double hand_depth, double hand_height) const
@@ -450,7 +450,7 @@ void Plot::runViewer(boost::shared_ptr<pcl::visualization::PCLVisualizer>& viewe
   while (!viewer->wasStopped())
   {
     viewer->spinOnce(100);
-    boost::this_thread::sleep(boost::posix_time::microseconds(100000));
+    std::this_thread::sleep_for(std::chrono::microseconds(100000));
   }
 
   viewer->close();
